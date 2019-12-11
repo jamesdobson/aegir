@@ -12,6 +12,18 @@ import (
  * Targets
  */
 
+func Test() error {
+	_, err := sh.Exec(
+		nil, os.Stdout, os.Stderr,
+		"go",
+		"test",
+		"-v",
+		"./...",
+	)
+
+	return err
+}
+
 func Install() error {
 	_, err := sh.Exec(
 		nil, os.Stdout, os.Stderr,
